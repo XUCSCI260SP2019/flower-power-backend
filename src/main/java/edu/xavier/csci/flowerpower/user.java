@@ -1,3 +1,5 @@
+package edu.xavier.csci.flowerpower;
+
 public class user {
 
     String username;
