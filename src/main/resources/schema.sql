@@ -1,13 +1,19 @@
 create table users(
     id int auto_increment primary key,
+    first_name varchar(255),
+    last_name varchar(255),
     email varchar(255),
-    firstname varchar(255),
-    lastname varchar(255),
-    password varchar(255)
+    user_role varchar(255),
+    password varchar(255),
+    number_of_requests int
 );
 
-create table times(
+create table requests(
     id int auto_increment primary key,
+    name_of_requester varchar(255),
+    name_of_requestee varchar(255),
+    request_status varchar(255),
     date datetime,
-    meetingpurpose varchar(255)
+    meeting_purpose varchar(255),
+    additional_meeting_info varchar(255)
 );
