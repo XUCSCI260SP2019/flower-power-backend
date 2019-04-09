@@ -7,6 +7,7 @@ public class user {
     String firstname;
     String lastname;
     String email;
+    int id;
 
 
     public user()
@@ -16,14 +17,17 @@ public class user {
         firstname = "";
         lastname = "";
         email = "";
+        id = 0;
+
     }
-    public user(String U, String P, String FN, String LN, String E)
+    public user(String U, String P, String FN, String LN, String E, int I)
     {
         username = U;
         password = P;
         firstname = FN;
         lastname = LN;
         email = E;
+        id = I;
     }
     public String getUsername() {
         return username;
@@ -60,5 +64,8 @@ public class user {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getId() {return id;}
+    public void setId(int id){this.id = id}
 
 }
