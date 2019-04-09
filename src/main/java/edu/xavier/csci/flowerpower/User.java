@@ -1,16 +1,16 @@
 package edu.xavier.csci.flowerpower;
 
-public class user {
+public class User {
 
     String username;
     String password;
     String firstname;
     String lastname;
     String email;
-    int id;
+    Integer id;
 
 
-    public user()
+    public User()
     {
         username= "";
         password = "";
@@ -20,7 +20,7 @@ public class user {
         id = 0;
 
     }
-    public user(String U, String P, String FN, String LN, String E, int I)
+    public User(String U, String P, String FN, String LN, String E, Integer I)
     {
         username = U;
         password = P;
@@ -66,6 +66,6 @@ public class user {
     }
 
     public int getId() {return id;}
-    public void setId(int id){this.id = id}
+    public void setId(Integer id){this.id = id;}
 
 }
