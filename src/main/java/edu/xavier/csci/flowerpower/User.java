@@ -15,6 +15,7 @@ public class User {
     String firstname;
     String lastname;
     String email;
+    String role;
 
 
     public User()
@@ -24,6 +25,7 @@ public class User {
         firstname = "";
         lastname = "";
         email = "";
+        role = "";
     }
 
     public User(String U, String P, String FN, String LN, String E)
@@ -33,6 +35,7 @@ public class User {
         firstname = FN;
         lastname = LN;
         email = E;
+        role = "";
     }
 
     public String getUsername() {
@@ -41,7 +44,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -76,5 +79,8 @@ public class User {
     public void setId(int id){
         this.id = id;
     }
+
+    public String getRole(){return role;}
+    public void setId(){this.role = role;}
 
 }
