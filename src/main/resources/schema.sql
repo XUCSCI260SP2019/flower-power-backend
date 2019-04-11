@@ -5,7 +5,9 @@ create table requests(
     name_of_requestee varchar(255),
     id_of_requestee int,
     request_status varchar(255),
-    date datetime,
+    date date,
+    start_time time,
+    end_time time,
     meeting_purpose varchar(255),
     additional_meeting_info varchar(255)
 );
