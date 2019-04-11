@@ -1,13 +1,21 @@
 package edu.xavier.csci.flowerpower;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
 
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
+    int id;
     String username;
     String password;
     String firstname;
     String lastname;
     String email;
-    Integer id;
+
 
 
     public User()
@@ -17,17 +25,15 @@ public class User {
         firstname = "";
         lastname = "";
         email = "";
-        id = 0;
 
     }
-    public User(String U, String P, String FN, String LN, String E, Integer I)
+    public User(String U, String P, String FN, String LN, String E)
     {
         username = U;
         password = P;
         firstname = FN;
         lastname = LN;
         email = E;
-        id = I;
     }
     public String getUsername() {
         return username;
@@ -65,7 +71,7 @@ public class User {
         this.email = email;
     }
 
-    public int getId() {return id;}
-    public void setId(Integer id){this.id = id;}
+    public long getId() {return id;}
+    public void setId(int id){this.id = id;}
 
 }
