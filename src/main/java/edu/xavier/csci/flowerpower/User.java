@@ -15,6 +15,7 @@ public class User {
     String firstname;
     String lastname;
     String email;
+    boolean admin;
 
 
 
@@ -25,6 +26,7 @@ public class User {
         firstname = "";
         lastname = "";
         email = "";
+        admin = false;
 
     }
     public User(String U, String P, String FN, String LN, String E)
@@ -34,6 +36,7 @@ public class User {
         firstname = FN;
         lastname = LN;
         email = E;
+        admin = false;
     }
     public String getUsername() {
         return username;
