@@ -16,7 +16,7 @@ public class User {
     String lastname;
     String email;
     Boolean admin;
-    String role;
+    String user_type;
 
 
     public User()
@@ -27,7 +27,7 @@ public class User {
         lastname = "";
         email = "";
         admin = false;
-        role = "";
+        user_type = "";
     }
 
     public User(String U, String P, String FN, String LN, String E)
@@ -38,7 +38,7 @@ public class User {
         lastname = LN;
         email = E;
         admin = false;
-        role = "";
+        user_type = "";
     }
 
     public String getUsername() {
@@ -85,7 +85,7 @@ public class User {
 
     public boolean getAdmin(){return admin;}
     public void setAdmin(){this.admin = admin;}
-    public String getRole(){return role;}
-    public void setId(){this.role = role;}
+    public String getUser_type(){return user_type;}
+    public void setUser_type(){this.user_type = user_type;}
 
 }
