@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    private long savePerson(@RequestBody User user) {
+    private long saveUser(@RequestBody User user) {
         userService.saveOrUpdate(user);
         return user.getId();
     }

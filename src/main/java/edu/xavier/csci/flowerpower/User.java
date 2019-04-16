@@ -15,6 +15,7 @@ public class User {
     String firstname;
     String lastname;
     String email;
+    Boolean admin;
     String role;
 
 
@@ -25,6 +26,7 @@ public class User {
         firstname = "";
         lastname = "";
         email = "";
+        admin = false;
         role = "";
     }
 
@@ -35,6 +37,7 @@ public class User {
         firstname = FN;
         lastname = LN;
         email = E;
+        admin = false;
         role = "";
     }
 
@@ -80,6 +83,8 @@ public class User {
         this.id = id;
     }
 
+    public boolean getAdmin(){return admin;}
+    public void setAdmin(){this.admin = admin;}
     public String getRole(){return role;}
     public void setId(){this.role = role;}
 
