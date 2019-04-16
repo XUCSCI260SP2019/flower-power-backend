@@ -1,4 +1,4 @@
-create table requests(
+create table reservation(
     id int auto_increment primary key,
     name_of_requester varchar(255),
     id_of_requester int,
@@ -9,5 +9,7 @@ create table requests(
     start_time time,
     end_time time,
     meeting_purpose varchar(255),
-    additional_meeting_info varchar(255)
+    additional_meeting_info varchar(255),
+    cancelled bool,
+    cancellation_reason text
 );
