@@ -1,4 +1,4 @@
-create table reservation(
+create table if not exists reservation(
     id int auto_increment primary key,
     name_of_requester varchar(255),
     id_of_requester int,
@@ -13,3 +13,12 @@ create table reservation(
     cancelled bool,
     cancellation_reason text
 );
+
+create table if not exists professors(
+    id int auto_increment primary key,
+    first_name varchar(255),
+    last_name varchar(255)
+);
+
+
+
