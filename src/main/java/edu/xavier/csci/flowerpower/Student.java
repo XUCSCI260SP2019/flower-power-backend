@@ -13,7 +13,7 @@ public class Student {
     String email;
     String password;
     String full_name;
-    String[] associated_professors; //not entirely sure how to set this up
+    //String[] associated_professors; //not entirely sure how to set this up
 
     public Student()
     {
