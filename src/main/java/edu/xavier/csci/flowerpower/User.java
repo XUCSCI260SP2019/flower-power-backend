@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class User {
 
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
@@ -18,7 +17,6 @@ public class User {
     boolean admin;
 
 
-
     public User()
     {
         username= "";
@@ -27,8 +25,8 @@ public class User {
         lastname = "";
         email = "";
         admin = false;
-
     }
+
     public User(String U, String P, String FN, String LN, String E)
     {
         username = U;
@@ -38,12 +36,14 @@ public class User {
         email = E;
         admin = false;
     }
+
     public String getUsername() {
         return username;
     }
     public void setUsername(String username) {
         this.username = username;
     }
+
     public String getPassword() {
         return password;
     }
@@ -54,7 +54,6 @@ public class User {
     public String getFirstname() {
         return firstname;
     }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -62,7 +61,6 @@ public class User {
     public String getLastname() {
         return lastname;
     }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -74,8 +72,15 @@ public class User {
         this.email = email;
     }
 
-    public int getId() {return id;}
-    public void setId(int id){this.id = id;}
+    public long getId() {
+        return id;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public boolean getAdmin(){return admin;}
+    public void setAdmin(){this.admin = admin;}
 
 
 }

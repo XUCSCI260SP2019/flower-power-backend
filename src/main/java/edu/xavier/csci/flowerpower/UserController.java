@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import java.util.*;
 
 @RestController
@@ -37,7 +36,7 @@ public class UserController {
     }
 ///////////////////////////////////////////////////////////////
     @PostMapping("/users")
-    private long savePerson(@RequestBody User user) {
+    private long saveUser(@RequestBody User user) {
         userService.saveOrUpdate(user);
         return user.getId();
     }
