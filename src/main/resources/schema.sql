@@ -19,6 +19,3 @@ create table if not exists professors(
     first_name varchar(255),
     last_name varchar(255)
 );
-
-
-
