@@ -14,7 +14,7 @@ public class User {
     String firstname;
     String lastname;
     String email;
-    Boolean admin;
+    boolean admin;
 
 
     public User()
@@ -81,5 +81,6 @@ public class User {
 
     public boolean getAdmin(){return admin;}
     public void setAdmin(){this.admin = admin;}
+
 
 }
