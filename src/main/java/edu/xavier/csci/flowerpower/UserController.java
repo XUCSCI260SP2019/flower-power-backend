@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +50,10 @@ public class UserController {
         {
             if(user.getPassword() == (userService.getUserById(user.getId())).getPassword())
             {
-                //send them to reservation page
+                return user;
             }
             else {
-                //re-prompt
+                return null;
             }
         }
         return user;
