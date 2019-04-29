@@ -36,7 +36,7 @@ public class Student {
         this.email = email;
     }
 
-    public String getpassword() {
+    public String getPassword() {
         return password;
     }
 

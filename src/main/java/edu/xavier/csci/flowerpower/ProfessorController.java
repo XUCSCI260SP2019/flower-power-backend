@@ -36,10 +36,10 @@ public class ProfessorController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/login", consumes = "application/json", produces = "applcation/json")
-    private Student loginUser(@RequestBody Professor prof) {
-        if (Professor.getEmail() == (/*(ProfessorService.getProfessorByEmail(prof.getEmail()).getEmail*/)
+    private Professor loginUser(@RequestBody Professor prof) {
+        if (prof.getEmail() == (/*(ProfessorService.getProfessorByEmail(prof.getEmail()).getEmail*/)
         {
-            if (Professor.getPassword() == (/*(ProfessorService.getProfessorByEmail(prof.getEmail()).getPassword*/)
+            if (prof.getPassword() == (/*(ProfessorService.getProfessorByEmail(prof.getEmail()).getPassword*/)
             {
                 return prof;
             }
