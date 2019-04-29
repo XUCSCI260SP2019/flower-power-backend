@@ -13,9 +13,3 @@ create table if not exists reservation(
     cancelled bool,
     cancellation_reason text
 );
-
-create table if not exists professors(
-    id int auto_increment primary key,
-    first_name varchar(255),
-    last_name varchar(255)
-);
