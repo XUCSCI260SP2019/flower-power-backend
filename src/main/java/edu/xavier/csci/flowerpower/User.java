@@ -72,7 +72,7 @@ public class User {
         this.email = email;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
     public void setId(int id){
@@ -81,6 +81,5 @@ public class User {
 
     public boolean getAdmin(){return admin;}
     public void setAdmin(){this.admin = admin;}
-
 
 }
