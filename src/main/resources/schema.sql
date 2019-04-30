@@ -13,3 +13,7 @@ create table if not exists reservation(
     cancelled bool,
     cancellation_reason text
 );
+create table if not exists professor_student_link(
+    professor_id int,
+    student_id int
+);
