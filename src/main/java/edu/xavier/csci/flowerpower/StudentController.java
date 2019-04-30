@@ -33,4 +33,26 @@ public class StudentController {
         studentService.saveOrUpdate(student);
         return student.getId();
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
+    private Student loginUser(@RequestBody Student student) {
+//        if (student.getEmail().equals((/*(StudentService.getStudentByEmail(student.getEmail()).getEmail*/))
+//        {
+//            if (student.getPassword().equals((/*(StudentService.getStudentByEmail(student.getEmail()).getPassword*/))
+//            {
+//                return student;
+//            }
+//            else{
+//            Student stud = new Student();
+//            return stud;
+//        }
+//        }
+//        else{
+//            Student stud = new Student();
+//            return stud;
+//        }
+        return student;
+        //return (/*(StudentService.getStudentByEmail(student.getEmail())*/);
+    }
 }
