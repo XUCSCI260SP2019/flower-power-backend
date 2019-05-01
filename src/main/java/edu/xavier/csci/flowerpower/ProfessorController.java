@@ -26,7 +26,7 @@ public class ProfessorController {
     }
 
     @GetMapping("/professors/{id}")
-    private Professor getStudent(@PathVariable("id") int id) {
+    private Professor getProfessor(@PathVariable("id") int id) {
         return professorService.getProfessorById(id);
     }
 
@@ -36,7 +36,7 @@ public class ProfessorController {
     }
 
     @PostMapping("/professors")
-    private long saveStudent(@RequestBody Professor professor) {
+    private long saveProfessor(@RequestBody Professor professor) {
         professorService.saveOrUpdate(professor);
         return professor.getId();
     }

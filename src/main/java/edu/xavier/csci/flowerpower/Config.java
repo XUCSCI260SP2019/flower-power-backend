@@ -1,4 +1,4 @@
-package edu.xavier.csci.flowerpower;
+/**package edu.xavier.csci.flowerpower;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -25,9 +25,11 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/").permitAll()
+                .antMatchers("/h2-console").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .httpBasic();
     }
-}
+}**/
