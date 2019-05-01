@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class FlowerPowerApplication {
 	private static final Logger logger = LoggerFactory.getLogger(FlowerPowerApplication.class);
 
-
 	public static void main(String[] args) {
 		logger.debug("Starting application");
 		SpringApplication.run(FlowerPowerApplication.class, args);
