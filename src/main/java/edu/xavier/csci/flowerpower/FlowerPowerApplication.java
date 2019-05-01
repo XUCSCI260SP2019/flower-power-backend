@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
 @SpringBootApplication
 public class FlowerPowerApplication {
 	private static final Logger logger = LoggerFactory.getLogger(FlowerPowerApplication.class);

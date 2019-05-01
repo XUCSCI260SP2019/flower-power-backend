@@ -10,8 +10,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+import java.security.Principal;
+import java.util.Base64;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -41,22 +51,19 @@ public class UserController {
         return user.getId();
     }
 
-    @CrossOrigin(origins = "*")
-    @PostMapping("/login")
-    private User loginUser(@RequestBody User user)
-    {
-        if(user.getUsername() == (userService.getUserById(user.getId())).getUsername())
-        {
-            if(user.getPassword() == (userService.getUserById(user.getId())).getPassword())
-            {
-                return user;
-            }
-            else {
-                return null;
-            }
+        @RequestMapping("/login")
+        public boolean login(@RequestBody User user) {
+            return
+                    user.getEmail().equals("user") && user.getPassword().equals("password");
         }
-        return user;
-    }
+
+        @RequestMapping("/user")
+        public Principal user(HttpServletRequest request) {
+            String authToken = request.getHeader("Authorization")
+                    .substring("Basic".length()).trim();
+            return () -> new String(Base64.getDecoder()
+                    .decode(authToken)).split(":")[0];
+        }
 
 
 
