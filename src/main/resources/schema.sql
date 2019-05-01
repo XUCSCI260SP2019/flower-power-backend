@@ -14,14 +14,14 @@ create table if not exists reservation(
     cancellation_reason text
 );
 
-create table if not exists professors(
+create table if not exists professor(
     id int auto_increment primary key,
     email varchar(255),
     password varchar(255),
     full_name varchar(255)
 );
 
-create table if not exists students(
+create table if not exists student(
     id int auto_increment primary key,
     email varchar(255),
     password varchar(255),
