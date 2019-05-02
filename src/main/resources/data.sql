@@ -1,15 +1,15 @@
-INSERT INTO professor (email, password, full_name) VALUES
+INSERT INTO professor (email, password, fullname) VALUES
 ('pEmail_@email.com', 'pPassword', 'bob tim'),
 ('pEmail_2@email.com.com', 'pPassword2', 'tim bob'),
 ('pEmail_3@email.com', 'pPassword3', 'not tim');
 
-INSERT INTO student (email, password, full_name) VALUES
+INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_@email.com', 'password', 'jim bob'),
 ('sEmail_2@email.com', 'password2', 'bob jim'),
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
 
 
-INSERT INTO professor_student_link (professor_id, student_id) VALUES
+INSERT INTO professorstudentlink (professorid, studentid) VALUES
 (1, 1),
 (1, 2),
 (1, 3),

@@ -11,19 +11,19 @@ public class Professor {
     int id;
     String email;
     String password;
-    String full_name;
+    String fullname;
 
     public Professor()
     {
         email = "";
         password = "";
-        full_name = "";
+        fullname = "";
     }
     public Professor(String E, String P, String FN)
     {
         email = E;
         password = P;
-        full_name = FN;
+        fullname = FN;
     }
     //getters and setters for all fields (below text)
     public String getEmail() {
@@ -40,11 +40,11 @@ public class Professor {
 
     public void setPassword(String password) { this.password = password; }
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullname;
     }
 
-    public void setFull_name(String full_name) { this.full_name = full_name; }
+    public void setFullName(String fullname) { this.fullname = fullname; }
 
     public long getId() {return id;}
 

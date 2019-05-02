@@ -12,20 +12,20 @@ public class Student {
     int id;
     String email;
     String password;
-    String full_name;
+    String fullname;
     //String[] associated_professors; //not entirely sure how to set this up
 
     public Student()
     {
         email = "";
         password = "";
-        full_name = "";
+        fullname = "";
     }
     public Student(String E, String P, String FN)
     {
         email = E;
         password = P;
-        full_name = FN;
+        fullname = FN;
     }
     //getters and setters for all fields (below text)
     public String getEmail() {
@@ -42,11 +42,11 @@ public class Student {
 
     public void setPassword(String password) { this.password = password; }
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFull_name(String full_name) { this.full_name = full_name; }
+    public void setFullname(String fullname) { this.fullname = fullname; }
 
     public long getId() {return id;}
 
