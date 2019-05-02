@@ -1,4 +1,4 @@
-package edu.xavier.csci.flowerpower;
+package edu.xavier.csci.flowerpower.Reservation;
 
 import edu.xavier.csci.flowerpower.Professor.Professor;
 
