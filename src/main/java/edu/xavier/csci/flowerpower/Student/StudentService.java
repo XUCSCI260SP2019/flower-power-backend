@@ -1,4 +1,4 @@
-package edu.xavier.csci.flowerpower;
+package edu.xavier.csci.flowerpower.Student;
 
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;

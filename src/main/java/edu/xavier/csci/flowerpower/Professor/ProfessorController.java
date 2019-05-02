@@ -1,4 +1,4 @@
-package edu.xavier.csci.flowerpower;
+package edu.xavier.csci.flowerpower.Professor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +16,7 @@ public class ProfessorController {
 
     @GetMapping("/professors")
     private List<Professor> getAllProfessors() {
-        List<Professor> prof = new ArrayList<Professor>();
-        professorService.getAllProfessors().forEach(Professor -> prof.add(Professor));
-        return prof;
+        return professorService.getAllProfessors();
     }
 
 

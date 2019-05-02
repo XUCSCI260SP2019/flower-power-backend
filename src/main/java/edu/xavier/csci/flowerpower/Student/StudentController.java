@@ -1,4 +1,4 @@
-package edu.xavier.csci.flowerpower;
+package edu.xavier.csci.flowerpower.Student;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +15,7 @@ public class StudentController {
 
     @GetMapping("/students")
     private List<Student> getAllStudents() {
-        List<Student> stud = new ArrayList<Student>();
-        studentService.getAllStudents().forEach(Student -> stud.add(Student));
-        return stud;
+        return studentService.getAllStudents();
     }
 
     @GetMapping("/students/{id}")
