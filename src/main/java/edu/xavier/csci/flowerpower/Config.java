@@ -1,16 +1,16 @@
-/**package edu.xavier.csci.flowerpower;
+package edu.xavier.csci.flowerpower;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+/*import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@EnableWebSecurity
-public class Config extends WebSecurityConfigurerAdapter {
-    @Override
+@EnableWebSecurity*/
+public class Config /*extends WebSecurityConfigurerAdapter*/ {
+    /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
@@ -31,5 +31,5 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .httpBasic();
-    }
-}**/
+    }*/
+}
