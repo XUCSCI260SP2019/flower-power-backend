@@ -21,13 +21,13 @@ public class ReservationController {
 
     @GetMapping("/reservation")
     private List<Reservation> getAllReservations() {
-        return ReservationService.getAllProfessors();
+        return ReservationService.getAllReservation();
     }
 
 
     @GetMapping("/reservation/{id}")
     private Reservation getProfessor(@PathVariable("id") int id) {
-        return ReservationService.getProfessorById(id);
+        return ReservationService.getReservationById(id);
     }
 
     @DeleteMapping("/reservation/{id}")
@@ -36,9 +36,9 @@ public class ReservationController {
     }
 
     @PostMapping("/reservation")
-    private long saveReservation(@RequestBody Reservation professor) {
-        ReservationService.saveOrUpdate(professor);
-        return reservato;
+    private long saveReservation(@RequestBody Reservation reservation) {
+        ReservationService.saveOrUpdate(reservation);
+        return reservation.getId();
     }
 
 }
