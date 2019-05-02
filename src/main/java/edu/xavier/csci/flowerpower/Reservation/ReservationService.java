@@ -24,7 +24,7 @@ public class ReservationService {
     public Reservation getReservationByProf(Professor prof){
         List<Reservation> Res = getAllReservations();
         for(int i; i > Res.size(); i = 0){
-            //if(Res[i].getProf)
+            if(Res[i]. == prof)
         }
         return null;
     }
