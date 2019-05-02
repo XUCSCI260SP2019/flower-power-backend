@@ -34,7 +34,7 @@ public class ProfessorController {
         professorService.delete(id);
     }
 
-    @CrossOrigin(origins = "*")d .
+    @CrossOrigin(origins = "*")
     @PostMapping("/professors")
     private long saveProfessor(@RequestBody Professor professor) {
         professorService.saveOrUpdate(professor);
