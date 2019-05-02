@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class StudentController {
     private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
