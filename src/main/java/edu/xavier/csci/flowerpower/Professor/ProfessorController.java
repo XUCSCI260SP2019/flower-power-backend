@@ -18,7 +18,7 @@ public class ProfessorController {
     @GetMapping("/professors")
     private List<Professor> getAllProfessors() {
 
-        System.out.println("Got Called");
+        System.out.println("GOt Called");
     return professorService.getAllProfessors();
     }
 
@@ -34,7 +34,7 @@ public class ProfessorController {
         professorService.delete(id);
     }
 
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "*")d .
     @PostMapping("/professors")
     private long saveProfessor(@RequestBody Professor professor) {
         professorService.saveOrUpdate(professor);
