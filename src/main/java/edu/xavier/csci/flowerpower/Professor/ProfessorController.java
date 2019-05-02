@@ -14,22 +14,27 @@ public class ProfessorController {
     ProfessorService professorService;
     ProfessorRepository professorRepository;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/professors")
     private List<Professor> getAllProfessors() {
-        return professorService.getAllProfessors();
+
+        System.out.println("Got Called");
+    return professorService.getAllProfessors();
     }
 
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/professors/{id}")
     private Professor getProfessor(@PathVariable("id") int id) {
         return professorService.getProfessorById(id);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/professors/{id}")
     private void deleteProfessor(@PathVariable("id") int id) {
         professorService.delete(id);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/professors")
     private long saveProfessor(@RequestBody Professor professor) {
         professorService.saveOrUpdate(professor);
