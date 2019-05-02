@@ -11,7 +11,7 @@ public class Professor {
     int id;
     String email;
     String password;
-    String full_name;
+    String fullname;
 
     public Professor()
     {

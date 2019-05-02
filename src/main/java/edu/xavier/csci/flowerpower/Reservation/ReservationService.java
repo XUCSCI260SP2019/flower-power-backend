@@ -1,5 +1,6 @@
 package edu.xavier.csci.flowerpower.Reservation;
 
+import edu.xavier.csci.flowerpower.Professor.Professor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,14 @@ public class ReservationService {
 
     public Reservation getReservationById(int id) {
         return ReservationRepository.findById(id).get();
+    }
+
+    public Reservation getReservationByProf(Professor prof){
+        List<Reservation> Res = getAllReservations();
+        for(int i; i > Res.size(); i = 0){
+            //if(Res[i].getProf)
+        }
+        return null;
     }
 
     public void saveOrUpdate(Reservation Reservation) {
