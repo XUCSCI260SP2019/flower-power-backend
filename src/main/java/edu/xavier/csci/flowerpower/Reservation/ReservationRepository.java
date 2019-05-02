@@ -2,4 +2,4 @@ package edu.xavier.csci.flowerpower.Reservation;
 
 import org.springframework.data.repository.CrudRepository;
 
-//public interface UserRepository extends CrudRepository<User, Integer> {}
+public interface ReservationRepository extends CrudRepository<Reservation, Integer> {}
