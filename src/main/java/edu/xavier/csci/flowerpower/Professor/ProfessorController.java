@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-public class ProfessorController {
+public class  ProfessorController {
     private static final Logger logger = LoggerFactory.getLogger(ProfessorController.class);
 
     @Autowired
