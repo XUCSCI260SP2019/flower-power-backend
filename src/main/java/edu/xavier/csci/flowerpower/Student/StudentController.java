@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class StudentController {
     private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
@@ -15,6 +16,7 @@ public class StudentController {
 
     @GetMapping("/students")
     private List<Student> getAllStudents() {
+        System.out.println("GOt Called");
         return studentService.getAllStudents();
     }
 
