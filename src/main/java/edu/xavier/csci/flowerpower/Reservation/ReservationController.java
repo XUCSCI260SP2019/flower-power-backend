@@ -6,6 +6,7 @@ import edu.xavier.csci.flowerpower.Reservation.ReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,9 +26,15 @@ public class ReservationController {
     }
 
 
+
     @GetMapping("/reservation/{id}")
-    private Reservation getProfessor(@PathVariable("id") int id) {
+    private Reservation getReservation(@PathVariable("id") int id) {
         return ReservationService.getReservationById(id);
+    }
+
+    @GetMapping("/pending")
+    private List<Reservation> getApprovedReservation(){
+        return ReservationService.getApprovedReservations();
     }
 
     @DeleteMapping("/reservation/{id}")

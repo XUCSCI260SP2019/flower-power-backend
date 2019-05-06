@@ -16,6 +16,12 @@ public class ReservationService {
         return Reservations;
     }
 
+    public List<Reservation> getApprovedReservations(){
+        List<Reservation> approvedReservations = new ArrayList <Reservation>();
+        ReservationRepository.findApproved(true).forEach(Reservation -> approvedReservations.add(Reservation));
+        return approvedReservations;
+    }
+
     public Reservation getReservationById(int id) {
         return ReservationRepository.findById(id).get();
     }
