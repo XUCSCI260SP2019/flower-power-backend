@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class ReservationController {
     private static final Logger logger = LoggerFactory.getLogger(ReservationController.class);
 
@@ -21,21 +20,25 @@ public class ReservationController {
     ReservationService ReservationService;
     ReservationRepository ReservationRepository;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/reservation")
     private List<Reservation> getAllReservations() {
         return ReservationService.getAllReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/reservation/{id}")
     private Reservation getReservation(@PathVariable("id") int id) {
         return ReservationService.getReservationById(id);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/pending")
     private List<Reservation> getPendingReservation(){
         return ReservationService.getPendingReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/pending/{id}")
     private List<Reservation> getPendingByID(@PathVariable("id") int id){
         List<Reservation> Final = new ArrayList<>();
@@ -48,11 +51,13 @@ public class ReservationController {
         return(Final);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/approved")
     private List<Reservation> getApprovedReservation(){
         return ReservationService.getApprovedReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/approved/{id}")
     private List<Reservation> getApprovedByID(@PathVariable("id") int id){
         List<Reservation> Final = new ArrayList<>();
@@ -65,17 +70,20 @@ public class ReservationController {
         return(Final);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/reservation/{id}")
     private void deleteReservation(@PathVariable("id") int id) {
         ReservationService.delete(id);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/reservation")
     private long saveReservation(@RequestBody Reservation reservation) {
         ReservationService.saveOrUpdate(reservation);
         return reservation.getId();
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/reservation/{id}/{starttime}/{endtime}/{fullname}")
     private void newReservation(@PathVariable("id") int id, @PathVariable("starttime") String start,
                                 @PathVariable("endtime") String end, @PathVariable("fullname") String name){
