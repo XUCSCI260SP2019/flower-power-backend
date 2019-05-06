@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -35,9 +36,33 @@ public class ReservationController {
         return ReservationService.getPendingReservations();
     }
 
+    @GetMapping("/pending/{id}")
+    private List<Reservation> getPendingByID(@PathVariable("id") int id){
+        List<Reservation> Final = new ArrayList<>();
+        List<Reservation> list = getPendingReservation();
+        for(int i = 0; i < list.size() ; i++){
+            if(list.get(i).professorid == id){
+                Final.add(list.get(i));
+            }
+        }
+        return(Final);
+    }
+
     @GetMapping("/approved")
     private List<Reservation> getApprovedReservation(){
         return ReservationService.getApprovedReservations();
+    }
+
+    @GetMapping("/approved/{id}")
+    private List<Reservation> getApprovedByID(@PathVariable("id") int id){
+        List<Reservation> Final = new ArrayList<>();
+        List<Reservation> list = getApprovedReservation();
+        for(int i = 0; i < list.size() ; i++){
+            if(list.get(i).professorid == id){
+                Final.add(list.get(i));
+            }
+        }
+        return(Final);
     }
 
     @DeleteMapping("/reservation/{id}")
