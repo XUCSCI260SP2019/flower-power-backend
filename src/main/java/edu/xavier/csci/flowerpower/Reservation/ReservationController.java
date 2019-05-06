@@ -33,6 +33,11 @@ public class ReservationController {
     }
 
     @GetMapping("/pending")
+    private List<Reservation> getPendingReservation(){
+        return ReservationService.getPendingReservations();
+    }
+
+    @GetMapping("/approved")
     private List<Reservation> getApprovedReservation(){
         return ReservationService.getApprovedReservations();
     }

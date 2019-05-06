@@ -16,6 +16,12 @@ public class ReservationService {
         return Reservations;
     }
 
+    public List<Reservation> getPendingReservations(){
+        List<Reservation> pendingReservations = new ArrayList <Reservation>();
+        ReservationRepository.findPending(false).forEach(Reservation -> pendingReservations.add(Reservation));
+        return pendingReservations;
+    }
+
     public List<Reservation> getApprovedReservations(){
         List<Reservation> approvedReservations = new ArrayList <Reservation>();
         ReservationRepository.findApproved(true).forEach(Reservation -> approvedReservations.add(Reservation));
