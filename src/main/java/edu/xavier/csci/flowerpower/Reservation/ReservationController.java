@@ -44,7 +44,7 @@ public class ReservationController {
         List<Reservation> Final = new ArrayList<>();
         List<Reservation> list = ReservationService.getPendingReservations();
         for(int i = 0; i < list.size() ; i++){
-            if(list.get(i).professorid == id){
+            if(list.get(i).getProfessorid() == id){
                 Final.add(list.get(i));
             }
         }
@@ -63,7 +63,7 @@ public class ReservationController {
         List<Reservation> Final = new ArrayList<>();
         List<Reservation> list = ReservationService.getApprovedReservations();
         for(int i = 0; i < list.size() ; i++){
-            if(list.get(i).professorid == id){
+            if(list.get(i).getProfessorid() == id){
                 Final.add(list.get(i));
             }
         }
