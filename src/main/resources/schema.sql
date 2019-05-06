@@ -1,15 +1,9 @@
 create table if not exists reservation(
     id int auto_increment primary key,
-    nameofrequester varchar(255),
-    idofrequester int,
-    nameofrequestee varchar(255),
-    idofrequestee int,
-    requeststatus varchar(255),
-    date date,
-    starttime time,
-    endtime time,
-    meetingpurpose varchar(255),
-    additionalmeetinginfo varchar(255),
+    fullname varchar(255),
+    approved bool,
+    starttime varchar(255),
+    endtime varchar(255),
     cancelled bool,
     cancellationreason text
 );

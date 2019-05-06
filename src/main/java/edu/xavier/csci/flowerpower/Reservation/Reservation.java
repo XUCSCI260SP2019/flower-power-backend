@@ -11,26 +11,31 @@ public class Reservation {
     @GeneratedValue(strategy=GenerationType.IDENTITY) //To be edited
     @Column(name = "id", updatable = true)
     int id;
-    String time;
-    Professor prof;
-    Boolean open;
-
+    String fullname;
+    boolean approved;
+    String starttime;
+    String endtime;
+    boolean cancelled;
+    String cancellationreason;
 
 
     public Reservation()
     {
-        time = "";
-        prof = null;
-        open = false;
-
-
+        fullname = "";
+        approved = false;
+        starttime = "";
+        endtime = "";
+        cancelled = false;
+        cancellationreason = "";
     }
 
-    public Reservation(String T, Professor P, Boolean O) {
-        time = T;
-        prof = P;
-        open = O;
-
+    public Reservation( String FN, boolean A, String ST, String ET, boolean C, String CR  ) {
+        fullname = FN;
+        approved = A;
+        starttime = ST;
+        endtime = ET;
+        cancelled = C;
+        cancellationreason = CR;
     }
 
     public int getId() {
@@ -41,27 +46,49 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getTime() {
-        return time;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
-    public Professor getProf() {
-        return prof;
+    public boolean getApproved() {
+        return approved;
     }
 
-    public void setProf(Professor prof) {
-        this.prof = prof;
+    public void setApproved(boolean approved) {
+        this.approved = approved;
     }
 
-    public Boolean getOpen() {
-        return open;
+    public String getStarttime(){
+        return starttime;
+    }
+    public void setStarttime(String starttime){
+        this.starttime = starttime;
     }
 
-    public void setOpen(Boolean open) {
-        this.open = open;
+    public String getEndtime(){
+        return endtime;
+    }
+    public void setEndtime(String endtime){
+        this.endtime = endtime;
+    }
+
+    public boolean getCancelled (){
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
+    }
+
+    public String getCancellationreason() {
+        return cancellationreason;
+    }
+
+    public void setCancellationreason(String cancellationreason) {
+        this.cancellationreason = cancellationreason;
     }
 }
