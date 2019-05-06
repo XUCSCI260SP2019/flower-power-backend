@@ -26,7 +26,7 @@ create table if not exists student(
     fullname varchar(255)
 );
 
-create table if not exists professorstudentlink(
+create table if not exists professormeetinglink(
     professorid int,
-    studentid int
+    meetingid int
 );

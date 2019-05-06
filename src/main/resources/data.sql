@@ -9,7 +9,7 @@ INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
 
 
-INSERT INTO professorstudentlink (professorid, studentid) VALUES
+INSERT INTO professormeetinglink (professorid, meetingid) VALUES
 (1, 1),
 (1, 2),
 (1, 3),

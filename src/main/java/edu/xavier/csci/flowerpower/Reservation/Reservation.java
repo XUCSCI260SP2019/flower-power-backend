@@ -12,15 +12,16 @@ public class Reservation {
     @Column(name = "id", updatable = true)
     int id;
     String fullname;
+    int professorid;
     boolean approved;
     String starttime;
     String endtime;
     boolean cancelled;
     String cancellationreason;
 
-    public Reservation()
-    {
+    public Reservation() {
         fullname = "";
+        professorid = 0;
         approved = false;
         starttime = "";
         endtime = "";
@@ -28,8 +29,9 @@ public class Reservation {
         cancellationreason = "";
     }
 
-    public Reservation( String FN, boolean A, String ST, String ET, boolean C, String CR  ) {
+    public Reservation( String FN, int PID, boolean A, String ST, String ET, boolean C, String CR  ) {
         fullname = FN;
+        professorid = PID;
         approved = A;
         starttime = ST;
         endtime = ET;
@@ -49,6 +51,11 @@ public class Reservation {
     }
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+
+    public int getProfessorid () {return professorid;}
+    public void setProfessorid(int professorid) {
+        this.professorid = professorid;
     }
 
     public boolean getApproved() {
