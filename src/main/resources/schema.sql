@@ -1,12 +1,3 @@
-create table if not exists reservation(
-    id int auto_increment primary key,
-    fullname varchar(255),
-    approved bool,
-    starttime varchar(255),
-    endtime varchar(255),
-    cancelled bool,
-    cancellationreason text
-);
 
 create table if not exists professor(
     id int auto_increment primary key,
@@ -26,7 +17,14 @@ create table if not exists student(
     fullname varchar(255)
 );
 
-create table if not exists professormeetinglink(
+create table if not exists reservation(
+    id int auto_increment primary key,
+    fullname varchar(255),
+    approved bool,
+    starttime varchar(255),
+    endtime varchar(255),
+    cancelled bool,
+    cancellationreason text,
     professorid int,
-    meetingid int
+    FOREIGN KEY (professorid) REFERENCES professor(id) ON DELETE CASCADE
 );
