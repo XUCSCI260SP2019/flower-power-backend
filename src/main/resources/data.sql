@@ -8,7 +8,7 @@ INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_2@email.com', 'password2', 'bob jim'),
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
 
-INSERT INTO reservation (fullname, professorid, approved, starttime, endtime, cancelled, cancellationreason) VALUES
+INSERT INTO reservation (fullname, professorid, approved, starttime, endtime, cancelled, cancellationreason) VALUE
 ('bob time', '1', false, '2-00', '3-00', false, '');
 
 INSERT INTO professormeetinglink (professorid, meetingid) VALUES
