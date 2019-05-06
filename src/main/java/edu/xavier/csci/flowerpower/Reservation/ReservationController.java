@@ -39,7 +39,7 @@ public class ReservationController {
     @GetMapping("/pending/{id}")
     private List<Reservation> getPendingByID(@PathVariable("id") int id){
         List<Reservation> Final = new ArrayList<>();
-        List<Reservation> list = getPendingReservation();
+        List<Reservation> list = ReservationService.getPendingReservations();
         for(int i = 0; i < list.size() ; i++){
             if(list.get(i).professorid == id){
                 Final.add(list.get(i));
@@ -56,7 +56,7 @@ public class ReservationController {
     @GetMapping("/approved/{id}")
     private List<Reservation> getApprovedByID(@PathVariable("id") int id){
         List<Reservation> Final = new ArrayList<>();
-        List<Reservation> list = getApprovedReservation();
+        List<Reservation> list = ReservationService.getApprovedReservations();
         for(int i = 0; i < list.size() ; i++){
             if(list.get(i).professorid == id){
                 Final.add(list.get(i));
@@ -82,5 +82,22 @@ public class ReservationController {
         Reservation Res = new Reservation(name, id, false, start, end, false, "");
         ReservationService.saveOrUpdate(Res);
     }
+
+   /* @PostMapping("/approve/{id}")
+    private void approveReservation(@PathVariable("id") int id){
+        List<Reservation> res = ReservationService.getPendingReservations();
+        for(int i = 0; i < res.size(); i ++){
+            if(res.get(i).professorid == id){
+                res.get(i).approved = true;
+                ReservationService.saveOrUpdate((res.get(i)));
+            }
+        }
+    }
+
+    @PostMapping("/cancel/{reason}")
+    private  void cancelReservation(@PathVariable("reason") String Reason, @RequestBody Reservation res){
+        res.cancelled = true;
+        res.cancellationreason = Reason;
+    }*/
 
 }
