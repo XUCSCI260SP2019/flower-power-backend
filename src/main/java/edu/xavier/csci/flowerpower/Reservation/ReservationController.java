@@ -76,4 +76,11 @@ public class ReservationController {
         return reservation.getId();
     }
 
+    @PostMapping("/reservation/{id}/{start}/{end}/{name}")
+    private void newReservation(@PathVariable("id") int id, @PathVariable("start") String start,
+                                @PathVariable("end") String end, @PathVariable("name") String name){
+        Reservation Res = new Reservation(name, id, false, start, end, false, "");
+        ReservationService.saveOrUpdate(Res);
+    }
+
 }
