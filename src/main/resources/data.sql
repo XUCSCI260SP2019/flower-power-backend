@@ -17,3 +17,6 @@ INSERT INTO professormeetinglink (professorid, meetingid) VALUES
 (2, 3),
 (3, 3),
 (3, 1);
+
+INSERT INTO reservation (fullname, approved, starttime, endtime, cancelled, cancellationreason) VALUES
+('testFullName', 'false', '0500', 'never', 'false', 'noCancel');
