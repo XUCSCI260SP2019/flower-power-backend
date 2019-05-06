@@ -76,14 +76,14 @@ public class ReservationController {
         return reservation.getId();
     }
 
-    @PostMapping("/reservation/{id}/{start}/{end}/{name}")
-    private void newReservation(@PathVariable("id") int id, @PathVariable("start") String start,
-                                @PathVariable("end") String end, @PathVariable("name") String name){
+    @PostMapping("/reservation/{id}/{starttime}/{endtime}/{fullname}")
+    private void newReservation(@PathVariable("id") int id, @PathVariable("starttime") String start,
+                                @PathVariable("endtime") String end, @PathVariable("fullname") String name){
         Reservation Res = new Reservation(name, id, false, start, end, false, "");
         ReservationService.saveOrUpdate(Res);
     }
 
-   /* @PostMapping("/approve/{id}")
+    /*@PostMapping("/approve/{id}")
     private void approveReservation(@PathVariable("id") int id){
         List<Reservation> res = ReservationService.getPendingReservations();
         for(int i = 0; i < res.size(); i ++){
