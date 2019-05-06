@@ -18,7 +18,6 @@ public class Reservation {
     boolean cancelled;
     String cancellationreason;
 
-
     public Reservation()
     {
         fullname = "";
@@ -41,7 +40,6 @@ public class Reservation {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -49,7 +47,6 @@ public class Reservation {
     public String getFullname() {
         return fullname;
     }
-
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
@@ -57,7 +54,6 @@ public class Reservation {
     public boolean getApproved() {
         return approved;
     }
-
     public void setApproved(boolean approved) {
         this.approved = approved;
     }
@@ -79,7 +75,6 @@ public class Reservation {
     public boolean getCancelled (){
         return cancelled;
     }
-
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
@@ -87,7 +82,6 @@ public class Reservation {
     public String getCancellationreason() {
         return cancellationreason;
     }
-
     public void setCancellationreason(String cancellationreason) {
         this.cancellationreason = cancellationreason;
     }

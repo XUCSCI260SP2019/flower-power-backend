@@ -25,8 +25,6 @@ public class ReservationController {
         return ReservationService.getAllReservations();
     }
 
-
-
     @GetMapping("/reservation/{id}")
     private Reservation getReservation(@PathVariable("id") int id) {
         return ReservationService.getReservationById(id);
