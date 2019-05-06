@@ -40,8 +40,8 @@ public class ReservationController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/pending/{id}")
-    private List<Reservation> getPendingByID(@PathVariable("id") int id){
-        List<Reservation> Final = new ArrayList<>();
+    private ArrayList<Reservation> getPendingByID(@PathVariable("id") int id){
+        ArrayList<Reservation> Final = new ArrayList<Reservation>();
         List<Reservation> list = ReservationService.getPendingReservations();
         for(int i = 0; i < list.size() ; i++){
             if(list.get(i).getProfessorid() == id){
@@ -59,8 +59,8 @@ public class ReservationController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/approved/{id}")
-    private List<Reservation> getApprovedByID(@PathVariable("id") int id){
-        List<Reservation> Final = new ArrayList<>();
+    private ArrayList<Reservation> getApprovedByID(@PathVariable("id") int id){
+        ArrayList<Reservation> Final = new ArrayList<Reservation>();
         List<Reservation> list = ReservationService.getApprovedReservations();
         for(int i = 0; i < list.size() ; i++){
             if(list.get(i).getProfessorid() == id){
