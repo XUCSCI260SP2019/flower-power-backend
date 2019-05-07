@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 public class ReservationController {
     private static final Logger logger = LoggerFactory.getLogger(ReservationController.class);
 
@@ -21,66 +20,92 @@ public class ReservationController {
     ReservationService ReservationService;
     ReservationRepository ReservationRepository;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/reservation")
     private List<Reservation> getAllReservations() {
         return ReservationService.getAllReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/reservation/{id}")
     private Reservation getReservation(@PathVariable("id") int id) {
         return ReservationService.getReservationById(id);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/pending")
     private List<Reservation> getPendingReservation(){
         return ReservationService.getPendingReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/pending/{id}")
-    private List<Reservation> getPendingByID(@PathVariable("id") int id){
-        List<Reservation> Final = new ArrayList<>();
-        List<Reservation> list = getPendingReservation();
+    private ArrayList<Reservation> getPendingByID(@PathVariable("id") int id){
+        ArrayList<Reservation> Final = new ArrayList<Reservation>();
+        List<Reservation> list = ReservationService.getPendingReservations();
         for(int i = 0; i < list.size() ; i++){
-            if(list.get(i).professorid == id){
+            if(list.get(i).getProfessorid() == id){
                 Final.add(list.get(i));
             }
         }
         return(Final);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/approved")
     private List<Reservation> getApprovedReservation(){
         return ReservationService.getApprovedReservations();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/approved/{id}")
-    private List<Reservation> getApprovedByID(@PathVariable("id") int id){
-        List<Reservation> Final = new ArrayList<>();
-        List<Reservation> list = getApprovedReservation();
+    private ArrayList<Reservation> getApprovedByID(@PathVariable("id") int id){
+        ArrayList<Reservation> Final = new ArrayList<Reservation>();
+        List<Reservation> list = ReservationService.getApprovedReservations();
         for(int i = 0; i < list.size() ; i++){
-            if(list.get(i).professorid == id){
+            if(list.get(i).getProfessorid() == id){
                 Final.add(list.get(i));
             }
         }
         return(Final);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/reservation/{id}")
     private void deleteReservation(@PathVariable("id") int id) {
         ReservationService.delete(id);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/reservation")
     private long saveReservation(@RequestBody Reservation reservation) {
         ReservationService.saveOrUpdate(reservation);
         return reservation.getId();
     }
 
-    @PostMapping("/reservation/{id}/{start}/{end}/{name}")
-    private void newReservation(@PathVariable("id") int id, @PathVariable("start") String start,
-                                @PathVariable("end") String end, @PathVariable("name") String name){
+    @CrossOrigin(origins = "*")
+    @PostMapping("/reservation/{id}/{starttime}/{endtime}/{fullname}")
+    private void newReservation(@PathVariable("id") int id, @PathVariable("starttime") String start,
+                                @PathVariable("endtime") String end, @PathVariable("fullname") String name){
         Reservation Res = new Reservation(name, id, false, start, end, false, "");
         ReservationService.saveOrUpdate(Res);
     }
+
+    /*@PostMapping("/approve/{id}")
+    private void approveReservation(@PathVariable("id") int id){
+        List<Reservation> res = ReservationService.getPendingReservations();
+        for(int i = 0; i < res.size(); i ++){
+            if(res.get(i).professorid == id){
+                res.get(i).approved = true;
+                ReservationService.saveOrUpdate((res.get(i)));
+            }
+        }
+    }
+
+    @PostMapping("/cancel/{reason}")
+    private  void cancelReservation(@PathVariable("reason") String Reason, @RequestBody Reservation res){
+        res.cancelled = true;
+        res.cancellationreason = Reason;
+    }*/
 
 }

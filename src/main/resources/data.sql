@@ -7,3 +7,6 @@ INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_@email.com', 'password', 'jim bob'),
 ('sEmail_2@email.com', 'password2', 'bob jim'),
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
+
+INSERT INTO reservation (fullname, approved, starttime, endtime, cancelled, cancellationreason) VALUES
+('testFullName', 'false', '0500', 'never', 'false', 'noCancel');
