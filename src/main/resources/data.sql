@@ -8,5 +8,5 @@ INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_2@email.com', 'password2', 'bob jim'),
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
 
-INSERT INTO reservation (fullname, approved, starttime, endtime, cancelled, cancellationreason) VALUES
-('testFullName', 'false', '0500', 'never', 'false', 'noCancel');
+INSERT INTO reservation (fullname, professorid, approved, starttime, endtime, cancelled, cancellationreason) VALUES
+('testFullName', 1, 'false', '0500', 'never', 'false', 'noCancel');
