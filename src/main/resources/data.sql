@@ -9,4 +9,5 @@ INSERT INTO student (email, password, fullname) VALUES
 ('sEmail_3@email.com', 'sPassword3', 'not bob');
 
 INSERT INTO reservation (fullname, professorid, approved, starttime, endtime, cancelled, cancellationreason) VALUES
-('testFullName', 1, 'false', '0500', 'never', 'false', 'noCancel');
+('testFullName', 1, 'false', '0500', 'never', 'false', 'noCancel'),
+('testFullName2', 1, 'false', '0500', 'never', 'true', 'noCancel');

@@ -1,4 +1,3 @@
-
 create table if not exists professor(
     id int auto_increment primary key,
     email varchar(255),
