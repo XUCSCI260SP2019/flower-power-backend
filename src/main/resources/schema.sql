@@ -2,7 +2,6 @@
 create table if not exists professor(
     id int auto_increment primary key,
     email varchar(255),
-    password varchar(255),
     fullname varchar(255),
     officebuilding varchar(255),
     officeroom int,

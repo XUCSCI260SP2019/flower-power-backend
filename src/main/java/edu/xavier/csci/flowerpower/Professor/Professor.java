@@ -10,7 +10,6 @@ public class Professor {
     @Column(name = "id", updatable = false)
     int id;
     String email;
-    String password;
     String fullname;
     String officebuilding;
     int officeroom;
@@ -21,17 +20,15 @@ public class Professor {
     public Professor()
     {
         email = "";
-        password = "";
         fullname = "";
         officebuilding = "";
         officeroom = 0;
         officehourstart = "";
         officehourend = "";
     }
-    public Professor(String E, String P, String FN, String OB, int R, String OHS, String OHE)
+    public Professor(String E, String FN, String OB, int R, String OHS, String OHE)
     {
         email = E;
-        password = P;
         fullname = FN;
         officebuilding = OB;
         officeroom = R;
@@ -46,12 +43,6 @@ public class Professor {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) { this.password = password; }
 
     public String getFullName() {
         return fullname;
